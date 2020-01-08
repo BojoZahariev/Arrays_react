@@ -10,6 +10,10 @@ const BtnM = props => {
   return <button onClick={props.onClick}>map</button>;
 };
 
+const BtnBck = props => {
+  return <button onClick={props.onClick}>back</button>;
+};
+
 class Container extends React.Component {
   constructor(props) {
     super(props);
@@ -33,14 +37,17 @@ class Container extends React.Component {
   render() {
     const ar = [<Cat1 />, <Cat2 />];
     const itemsMapped = ar.map(element => (
-      <li className='red' key={ar.indexOf(element)}>
+      <div className='red' key={ar.indexOf(element)}>
         {element}
-      </li>
+      </div>
     ));
     return (
       <div className='main'>
         <BtnM onClick={() => this.setState({ mtd: 'map' })} />
-        {this.state.mtd === 'map' ? itemsMapped : ar}
+        {ar}
+        {this.state.mtd === 'map' ? itemsMapped : null}
+
+        <BtnBck onClick={() => this.setState({ mtd: '' })} />
       </div>
     );
   }
