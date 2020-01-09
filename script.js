@@ -62,10 +62,20 @@ class Container extends React.Component {
         </div>
 
         <div className='right'>
-          <Cats className={'init'} />
-          {this.state.mtd === 'map' ? <Cats className={'mapped'} /> : null}
+          {this.state.mtd === '' ? <Cats className={'init'} /> : null}
+          {this.state.mtd === 'map' ? (
+            <div>
+              <Cats className={'init'} />
+              <Cats className={'mapped'} />
+            </div>
+          ) : null}
+
           {this.state.mtd === 'forEach' ? <Cats className={'forEach'} /> : null}
-          {this.state.mtd === 'filter' ? <Cat1 className={'filtered'} /> : null}
+          {this.state.mtd === 'filter' ? (
+            <div>
+              <Cats className={'init'} /> <Cat1 className={'filtered'} />
+            </div>
+          ) : null}
 
           <BtnBck onClick={() => this.setState({ mtd: '' })} />
         </div>
