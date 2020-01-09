@@ -4,7 +4,24 @@
   box-sizing: border-box;
 }
 
-.red {
+.main {
+  padding: 20px;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.mapped {
   padding: 20px;
   color: red;
+}
+
+.forEach {
+  color: green;
+}
+
+.filtered {
+  color: blue;
+  padding: 20px;
 }
