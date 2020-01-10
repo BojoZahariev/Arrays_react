@@ -1,15 +1,20 @@
 const Pirate = props => {
-  return <img className={props.className} src={props.src} />;
+  return (
+    <div className={props.className}>
+      {props.parrot ? <img className='parrot' src='images/parrot2.png' /> : null}
+      <img className='pirateImg' alt='pirate' src={props.src} />
+    </div>
+  );
 };
 
 const Cats = props => {
   return (
     <div className={props.className}>
-      <div>
+      <div className='tilt'>
         <img className='shipImg' src='images/ship.png' />
-        <Pirate src={'images/pirate1.png'} className={'pirate1'} />
-        <Pirate src={'images/pirate2.png'} className={'pirate2'} />
-        <Pirate src={'images/pirate3.png'} className={'pirate3'} />
+        <Pirate parrot={props.parrot} src={'images/pirate1.png'} className={'pirate1'} />
+        <Pirate parrot={props.parrot} src={'images/pirate2.png'} className={'pirate2'} />
+        <Pirate parrot={props.parrot} src={'images/pirate3.png'} className={'pirate3'} />
       </div>
       <img className='waves' src='images/waves.png' />
     </div>
@@ -56,7 +61,7 @@ class Container extends React.Component {
           {this.state.mtd === 'map' ? (
             <div className='mappedDiv'>
               <Cats className={'init mapped'} />
-              <Cats className={'init mapped'} />
+              <Cats className={'init mapped'} parrot={true} />
             </div>
           ) : null}
 
@@ -72,7 +77,7 @@ class Container extends React.Component {
               <Pirate src={'images/pirate3.png'} className={'pirate3'} />
             </div>
           ) : null}
-          <p>{this.state.mtd}</p>
+          <p className='mtdTitle'>{this.state.mtd}</p>
           <BtnBck onClick={() => this.setState({ mtd: '' })} />
         </div>
       </div>
