@@ -56,9 +56,14 @@ class Container extends React.Component {
     return (
       <div className='main'>
         <div className='left'>
-          <Btn text='map' onClick={() => this.setState({ mtd: 'map' })} />
-          <Btn text='forEach' onClick={() => this.setState({ mtd: 'forEach' })} />
-          <Btn text='filter' onClick={() => this.setState({ mtd: 'filter' })} />
+          <p>This method returns a new array with the updated elements after calling a callback function on every element in the array.</p>
+          <Btn text='map()' onClick={() => this.setState({ mtd: 'map' })} />
+          <p>This method executes a snippet of code (or a function) once for every element of an array.</p>
+          <Btn text='forEach()' onClick={() => this.setState({ mtd: 'forEach' })} />
+          <p>This method checks each element in an array to see if it meets a condition. It returns a new array with the elements that meet the condition.</p>
+          <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter' })} />
+          <p>This method returns the value of the first element of an array which satisfies a condition.</p>
+          <Btn text='find()' onClick={() => this.setState({ mtd: 'find' })} />
         </div>
 
         <div className='right'>
@@ -74,6 +79,12 @@ class Container extends React.Component {
           {this.state.mtd === 'filter' ? (
             <div>
               <Cats className={'init'} /> <Cat1 className={'filtered'} />
+            </div>
+          ) : null}
+          {this.state.mtd === 'find' ? (
+            <div>
+              <Cats className={'init'} />
+              <Cat2 className={'filtered'} />
             </div>
           ) : null}
 
