@@ -10,14 +10,53 @@
 }
 
 .left {
-  flex-basis: 50%;
+  flex-basis: 40%;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #222;
 }
 
 .right {
-  flex-basis: 50%;
+  flex-basis: 60%;
+}
+
+.init {
+  margin: 20px auto;
+  position: relative;
+  width: 60%;
+  transition: all 1s;
+}
+
+.shipImg {
+  display: block;
+  width: 100%;
+}
+
+.pirate1 {
+  position: absolute;
+  bottom: 37%;
+  left: 26%;
+  width: 17%;
+}
+
+.pirate2 {
+  position: absolute;
+  bottom: 37%;
+  left: 45%;
+  width: 22%;
+}
+
+.pirate3 {
+  position: absolute;
+  bottom: 45%;
+  left: 65%;
+  width: 20%;
+}
+
+.waves {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .btn {
@@ -25,24 +64,16 @@
   width: 100px;
 }
 
-.init {
+.mappedDiv {
   display: flex;
-  padding: 0px 10px;
 }
 
 .mapped {
-  display: flex;
-  padding: 0px 10px;
-  color: red;
+  width: 50%;
 }
 
 .forEach {
-  display: flex;
-  padding: 0px 10px;
-  color: green;
 }
 
 .filtered {
-  color: blue;
-  padding: 20px;
 }

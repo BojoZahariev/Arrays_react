@@ -1,17 +1,17 @@
-const Cat1 = props => {
-  return <div className={props.className}>1</div>;
-};
-
-const Cat2 = props => {
-  return <div className={props.className}>2</div>;
+const Pirate = props => {
+  return <img className={props.className} src={props.src} />;
 };
 
 const Cats = props => {
   return (
     <div className={props.className}>
-      [
-      <Cat1 className={props.className} /> ,
-      <Cat2 className={props.className} />]
+      <div>
+        <img className='shipImg' src='images/ship.png' />
+        <Pirate src={'images/pirate1.png'} className={'pirate1'} />
+        <Pirate src={'images/pirate2.png'} className={'pirate2'} />
+        <Pirate src={'images/pirate3.png'} className={'pirate3'} />
+      </div>
+      <img className='waves' src='images/waves.png' />
     </div>
   );
 };
@@ -38,21 +38,6 @@ class Container extends React.Component {
   }
 
   render() {
-    const ar = [<Cat1 />, <Cat2 />];
-
-    /*
-    const itemsMapped = ar.map(element => (
-      <div className='mapped' key={ar.indexOf(element)}>
-        {element}
-      </div>
-    ));
-
-    const itemsForEach = ar.map(element => (
-      <div className='forEach' key={ar.indexOf(element)}>
-        {element}
-      </div>
-    ));
-*/
     return (
       <div className='main'>
         <div className='left'>
@@ -69,25 +54,25 @@ class Container extends React.Component {
         <div className='right'>
           {this.state.mtd === '' ? <Cats className={'init'} /> : null}
           {this.state.mtd === 'map' ? (
-            <div>
-              <Cats className={'init'} />
-              <Cats className={'mapped'} />
+            <div className='mappedDiv'>
+              <Cats className={'init mapped'} />
+              <Cats className={'init mapped'} />
             </div>
           ) : null}
 
-          {this.state.mtd === 'forEach' ? <Cats className={'forEach'} /> : null}
+          {this.state.mtd === 'forEach' ? <Cats className={'init'} /> : null}
           {this.state.mtd === 'filter' ? (
             <div>
-              <Cats className={'init'} /> <Cat1 className={'filtered'} />
+              <Cats className={'init'} /> <Pirate src={'images/pirate2.png'} className={'pirate3'} />
             </div>
           ) : null}
           {this.state.mtd === 'find' ? (
             <div>
               <Cats className={'init'} />
-              <Cat2 className={'filtered'} />
+              <Pirate src={'images/pirate3.png'} className={'pirate3'} />
             </div>
           ) : null}
-
+          <p>{this.state.mtd}</p>
           <BtnBck onClick={() => this.setState({ mtd: '' })} />
         </div>
       </div>
