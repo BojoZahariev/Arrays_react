@@ -20,11 +20,11 @@ const Pirate = props => {
 const Ship = props => {
   return (
     <div className={props.className}>
-      <div className='tilt'>
-        <img className='shipImg' src='images/ship.png' />
-        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate1.png'} className={'pirate1'} />
-        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={'pirate2'} />
-        {!props.filter ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'pirate3'} /> : null}
+      <div className={props.tilt ? 'tilt' : ''}>
+        {!props.reduce ? <img className='shipImg' src='images/ship.png' /> : null}
+        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate1.png'} className={props.reduce ? 'pirate1reduced' : 'pirate1'} />
+        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={props.reduce ? 'pirate2reduced' : 'pirate2'} />
+        {!props.filter ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={props.reduce ? 'pirate3reduced' : 'pirate3'} /> : null}
       </div>
 
       {props.find ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'find'} /> : null}
@@ -68,37 +68,50 @@ class Container extends React.Component {
           <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter' })} />
           <p>This method returns the value of the first element of an array which satisfies a condition.</p>
           <Btn text='find()' onClick={() => this.setState({ mtd: 'find' })} />
+          <p>
+            The reduce method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).
+            The return value of the function is stored in an accumulator.
+          </p>
+          <Btn text='reduce()' onClick={() => this.setState({ mtd: 'reduce' })} />
         </div>
 
         <div className='right'>
-          {this.state.mtd === '' ? <Ship className={'init'} /> : null}
+          {this.state.mtd === '' ? <Ship className={'init'} tilt={true} /> : null}
 
           {/* MAP */}
           {this.state.mtd === 'map' ? (
             <div className='mappedDiv'>
-              <Ship className={'init mapped'} />
-              <Ship className={'init mapped'} parrot={true} />
+              <Ship className={'init mapped'} tilt={true} />
+              <Ship className={'init mapped'} parrot={true} tilt={true} />
             </div>
           ) : null}
 
           {/* forEach */}
-          {this.state.mtd === 'forEach' ? <Ship className={'init'} treasure={true} /> : null}
+          {this.state.mtd === 'forEach' ? <Ship className={'init'} treasure={true} tilt={true} /> : null}
 
           {/* Filter */}
           {this.state.mtd === 'filter' ? (
             <div className='mappedDiv'>
-              <Ship className={'init mapped'} />
-              <Ship className={'init mapped'} filter={true} />
+              <Ship className={'init mapped'} tilt={true} />
+              <Ship className={'init mapped'} filter={true} tilt={true} />
             </div>
           ) : null}
 
           {/* Find */}
           {this.state.mtd === 'find' ? (
             <div>
-              <Ship className={'init'} find={true} />
-              {/* <Pirate src={'images/pirate3.png'} className={'find'} />*/}
+              <Ship className={'init'} find={true} tilt={true} />
             </div>
           ) : null}
+
+          {/* REDUCE */}
+          {this.state.mtd === 'reduce' ? (
+            <div className='mappedDiv'>
+              <Ship className={'init mapped'} tilt={true} />
+              <Ship className={'init mapped'} reduce={true} />
+            </div>
+          ) : null}
+
           <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
           <BtnBck onClick={() => this.setState({ mtd: '' })} />
         </div>
