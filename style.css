@@ -40,9 +40,24 @@
   font-weight: 300;
   transform: rotate(2deg);
   letter-spacing: 3px;
+
   /*
   text-shadow: -1px -1px 0 #222, 2px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
   */
+}
+
+.skull1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+}
+
+.skull2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
 }
 
 .left {
@@ -55,11 +70,11 @@
 .right {
   flex-basis: 60%;
   background-color: #faedca;
-  height: 100vh;
 }
 
 .init {
-  margin: 20px auto;
+  margin: auto;
+  padding-top: 20px;
   position: relative;
   width: 60%;
   transition: all 1s;
@@ -79,6 +94,8 @@
   animation-name: tilt;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+
+  overflow: hidden;
 }
 
 @-webkit-keyframes tilt {
@@ -241,8 +258,10 @@ img {
 
   -webkit-animation-name: fly;
   -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in;
   animation-name: fly;
   animation-duration: 3s;
+  animation-timing-function: ease-in;
   z-index: -1;
 }
 
@@ -308,11 +327,48 @@ img {
 }
 
 .mapped {
-  width: 50%;
+  flex-grow: 1;
 }
 
-.forEach {
+.checkIcon {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 999;
 }
 
-.filtered {
+#check {
+  fill: none;
+  stroke: #5fad56;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+
+  -webkit-animation-name: draw;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: draw;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

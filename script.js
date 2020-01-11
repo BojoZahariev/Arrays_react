@@ -3,6 +3,9 @@ const Header = props => {
     <div className='header'>
       <img className='sign' src='images/sign2.png' />
       <p className='signText'>Arrrays!</p>
+
+      <img className='skull1' src='images/skull2.png' />
+      <img className='skull2' src='images/skull2.png' />
     </div>
   );
 };
@@ -24,10 +27,19 @@ const Ship = props => {
         {!props.reduce ? <img className='shipImg' src='images/ship.png' /> : null}
         <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate1.png'} className={props.reduce ? 'pirate1reduced' : 'pirate1'} />
         <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={props.reduce ? 'pirate2reduced' : 'pirate2'} />
-        {!props.filter ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={props.reduce ? 'pirate3reduced' : 'pirate3'} /> : null}
+        {!props.filter ? (
+          <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={props.reduce ? 'pirate3reduced' : 'pirate3'} />
+        ) : null}
       </div>
 
       {props.find ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'find'} /> : null}
+
+      {props.every ? (
+        <svg className='checkIcon'>
+          <path id='check' d='M10,50 l25,40 l95,-70' />
+        </svg>
+      ) : null}
+
       <img className='waves' src='images/waves.png' />
     </div>
   );
@@ -62,17 +74,24 @@ class Container extends React.Component {
         <div className='left'>
           <p>This method returns a new array with the updated elements after calling a callback function on every element in the array.</p>
           <Btn text='map()' onClick={() => this.setState({ mtd: 'map' })} />
+
           <p>This method executes a snippet of code (or a function) once for every element of an array.</p>
           <Btn text='forEach()' onClick={() => this.setState({ mtd: 'forEach' })} />
+
           <p>This method checks each element in an array to see if it meets a condition. It returns a new array with the elements that meet the condition.</p>
           <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter' })} />
+
           <p>This method returns the value of the first element of an array which satisfies a condition.</p>
           <Btn text='find()' onClick={() => this.setState({ mtd: 'find' })} />
+
           <p>
             The reduce method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).
             The return value of the function is stored in an accumulator.
           </p>
           <Btn text='reduce()' onClick={() => this.setState({ mtd: 'reduce' })} />
+
+          <p>The 'every' method tests if all elements in the array pass a condition. The return value is a boolean.</p>
+          <Btn text='every()' onClick={() => this.setState({ mtd: 'every' })} />
         </div>
 
         <div className='right'>
@@ -109,6 +128,13 @@ class Container extends React.Component {
             <div className='mappedDiv'>
               <Ship className={'init mapped'} tilt={true} />
               <Ship className={'init mapped'} reduce={true} />
+            </div>
+          ) : null}
+
+          {/* Every */}
+          {this.state.mtd === 'every' ? (
+            <div>
+              <Ship className={'init'} every={true} tilt={true} />
             </div>
           ) : null}
 
