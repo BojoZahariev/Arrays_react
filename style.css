@@ -61,27 +61,28 @@
 }
 
 .left {
-  flex-basis: 40%;
+  flex-basis: 10%;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #222;
 }
 
 .right {
-  flex-basis: 60%;
+  flex-basis: 90%;
   background-color: #faedca;
+  height: 100vh;
 }
 
 .init {
-  margin: auto;
-  padding-top: 20px;
+  margin: 20px auto;
   position: relative;
-  width: 60%;
+  width: 40%;
+  min-width: 380px;
+  max-width: 550px;
   transition: all 1s;
 }
 
 .shipImg {
-  display: block;
   width: 100%;
   z-index: -2;
 }
@@ -94,8 +95,6 @@
   animation-name: tilt;
   animation-duration: 10s;
   animation-iteration-count: infinite;
-
-  overflow: hidden;
 }
 
 @-webkit-keyframes tilt {
@@ -306,9 +305,9 @@ img {
 }
 
 .waves {
-  width: 100%;
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 
 .mtdTitle {
@@ -324,10 +323,13 @@ img {
 
 .mappedDiv {
   display: flex;
+  justify-content: center;
 }
 
 .mapped {
-  flex-grow: 1;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 40%;
 }
 
 .checkIcon {
