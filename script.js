@@ -26,6 +26,8 @@ const Ship = props => {
         <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={'pirate2'} />
         {!props.filter ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'pirate3'} /> : null}
       </div>
+
+      {props.find ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'find'} /> : null}
       <img className='waves' src='images/waves.png' />
     </div>
   );
@@ -93,8 +95,8 @@ class Container extends React.Component {
           {/* Find */}
           {this.state.mtd === 'find' ? (
             <div>
-              <Ship className={'init'} />
-              <Pirate src={'images/pirate3.png'} className={'pirate3'} />
+              <Ship className={'init'} find={true} />
+              {/* <Pirate src={'images/pirate3.png'} className={'find'} />*/}
             </div>
           ) : null}
           <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>

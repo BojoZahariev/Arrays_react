@@ -35,12 +35,13 @@
   width: 300px;
   font-size: 60px;
   text-align: center;
-  color: #f0f7f4;
+  color: #222;
   font-family: 'Pirata One', cursive;
   font-weight: 300;
   transform: rotate(2deg);
-
+  /*
   text-shadow: -1px -1px 0 #222, 2px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  */
 }
 
 .left {
@@ -133,6 +134,43 @@ img {
   left: 65%;
   width: 22%;
   z-index: 1;
+}
+
+.find {
+  position: absolute;
+  bottom: 14%;
+  left: 65%;
+  width: 30%;
+  z-index: 1;
+
+  -webkit-animation-name: out;
+  -webkit-animation-duration: 3s;
+  animation-name: out;
+  animation-duration: 3s;
+}
+
+@keyframes out {
+  0% {
+    bottom: 44%;
+    width: 22%;
+  }
+
+  100% {
+    bottom: 14%;
+    width: 30%;
+  }
+}
+
+@-webkit-keyframes out {
+  0% {
+    bottom: 44%;
+    width: 22%;
+  }
+
+  100% {
+    bottom: 14%;
+    width: 30%;
+  }
 }
 
 .parrot {
