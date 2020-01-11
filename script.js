@@ -47,9 +47,9 @@ const Ship = props => {
 
 const Btn = props => {
   return (
-    <button className='btn' onClick={props.onClick}>
-      {props.text}
-    </button>
+    <div className='btn' onClick={props.onClick}>
+      <p className='btnText'>{props.text}</p>
+    </div>
   );
 };
 

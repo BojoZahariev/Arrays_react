@@ -10,11 +10,12 @@
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   background-color: #f2c078;
   height: 100px;
   width: 100%;
+  z-index: 1;
 }
 
 .sign {
@@ -64,7 +65,8 @@
   flex-basis: 10%;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #222;
+
+  background-color: #faedca;
 }
 
 .right {
@@ -317,8 +319,24 @@ img {
 }
 
 .btn {
-  margin: 10px;
-  width: 100px;
+  position: relative;
+  width: 200px;
+  height: 80px;
+  background-image: url(images/button.png);
+  background-size: cover;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.btn:hover {
+  transform: rotate(2deg);
+}
+
+.btnText {
+  position: absolute;
+  font-size: 25px;
+  bottom: 0;
+  left: 50px;
 }
 
 .mappedDiv {
