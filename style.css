@@ -17,6 +17,32 @@
   width: 100%;
 }
 
+.sign {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+}
+
+.signText {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  font-size: 60px;
+  text-align: center;
+  color: #f0f7f4;
+  font-family: 'Pirata One', cursive;
+  font-weight: 300;
+  transform: rotate(2deg);
+
+  text-shadow: -1px -1px 0 #222, 2px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+}
+
 .left {
   flex-basis: 40%;
   display: flex;
@@ -27,6 +53,7 @@
 .right {
   flex-basis: 60%;
   background-color: #faedca;
+  height: 100vh;
 }
 
 .init {
@@ -43,16 +70,16 @@
 }
 
 .tilt {
-  -webkit-animation-name: blink;
+  -webkit-animation-name: tilt;
   -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
 
-  animation-name: blink;
+  animation-name: tilt;
   animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes blink {
+@-webkit-keyframes tilt {
   0% {
     transform: rotate(-15deg);
   }
@@ -66,7 +93,7 @@
   }
 }
 
-@keyframes blink {
+@keyframes tilt {
   0% {
     transform: rotate(-5deg);
   }
@@ -110,7 +137,7 @@ img {
 
 .parrot {
   position: absolute;
-  top: -50%;
+  top: -47%;
   left: 40%;
   width: 60%;
   -webkit-animation-name: fly;

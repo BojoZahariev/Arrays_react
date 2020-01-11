@@ -1,3 +1,12 @@
+const Header = props => {
+  return (
+    <div className='header'>
+      <img className='sign' src='images/sign2.png' />
+      <p className='signText'>Arrrays!</p>
+    </div>
+  );
+};
+
 const Pirate = props => {
   return (
     <div className={props.className}>
@@ -8,14 +17,14 @@ const Pirate = props => {
   );
 };
 
-const Cats = props => {
+const Ship = props => {
   return (
     <div className={props.className}>
       <div className='tilt'>
         <img className='shipImg' src='images/ship.png' />
         <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate1.png'} className={'pirate1'} />
         <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={'pirate2'} />
-        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'pirate3'} />
+        {!props.filter ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'pirate3'} /> : null}
       </div>
       <img className='waves' src='images/waves.png' />
     </div>
@@ -46,7 +55,8 @@ class Container extends React.Component {
   render() {
     return (
       <div className='main'>
-        <div className='header'></div>
+        <Header />
+
         <div className='left'>
           <p>This method returns a new array with the updated elements after calling a callback function on every element in the array.</p>
           <Btn text='map()' onClick={() => this.setState({ mtd: 'map' })} />
@@ -59,24 +69,31 @@ class Container extends React.Component {
         </div>
 
         <div className='right'>
-          {this.state.mtd === '' ? <Cats className={'init'} /> : null}
+          {this.state.mtd === '' ? <Ship className={'init'} /> : null}
+
+          {/* MAP */}
           {this.state.mtd === 'map' ? (
             <div className='mappedDiv'>
-              <Cats className={'init mapped'} />
-              <Cats className={'init mapped'} parrot={true} />
+              <Ship className={'init mapped'} />
+              <Ship className={'init mapped'} parrot={true} />
             </div>
           ) : null}
 
-          {this.state.mtd === 'forEach' ? <Cats className={'init'} treasure={true} /> : null}
+          {/* forEach */}
+          {this.state.mtd === 'forEach' ? <Ship className={'init'} treasure={true} /> : null}
 
+          {/* Filter */}
           {this.state.mtd === 'filter' ? (
-            <div>
-              <Cats className={'init'} /> <Pirate src={'images/pirate2.png'} className={'pirate3'} />
+            <div className='mappedDiv'>
+              <Ship className={'init mapped'} />
+              <Ship className={'init mapped'} filter={true} />
             </div>
           ) : null}
+
+          {/* Find */}
           {this.state.mtd === 'find' ? (
             <div>
-              <Cats className={'init'} />
+              <Ship className={'init'} />
               <Pirate src={'images/pirate3.png'} className={'pirate3'} />
             </div>
           ) : null}
