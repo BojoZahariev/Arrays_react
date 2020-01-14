@@ -41,6 +41,8 @@ const Ship = props => {
           <path id='check' d='M10,50 l25,40 l95,-70' />
         </svg>
       ) : null}
+
+      {props.findIndex ? <div className='findIndex'>1</div> : null}
     </div>
   );
 };
@@ -82,6 +84,7 @@ class Container extends React.Component {
         <Header />
 
         <div className='left'>
+          {/*BUTTONS */}
           <Btn text='map()' onClick={() => this.setState({ mtd: 'map', clicked: false })} />
           <Btn text='forEach()' onClick={() => this.setState({ mtd: 'forEach', clicked: false })} />
           <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter', clicked: false })} />
@@ -89,8 +92,10 @@ class Container extends React.Component {
           <Btn text='reduce()' onClick={() => this.setState({ mtd: 'reduce', clicked: false })} />
           <Btn text='every()' onClick={() => this.setState({ mtd: 'every', clicked: false })} />
           <Btn text='some()' onClick={() => this.setState({ mtd: 'some', clicked: false })} />
+          <Btn text='findIndex()' onClick={() => this.setState({ mtd: 'findIndex', clicked: false })} />
         </div>
 
+        {/*SHIP STATE */}
         <div className='right'>
           {!this.state.clicked ? <Ship className={'init'} tilt={true} /> : null}
 
@@ -134,6 +139,14 @@ class Container extends React.Component {
               <Ship className={'init'} every={true} tilt={true} />
             </div>
           ) : null}
+
+          {this.state.mtd === 'findIndex' && this.state.clicked ? (
+            <div>
+              <Ship className={'init'} findIndex={true} tilt={true} />
+            </div>
+          ) : null}
+
+          {/* Right Side Text */}
 
           <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
 
@@ -193,6 +206,14 @@ class Container extends React.Component {
             <UnderShip
               text={"The 'some' method tests if some of the elements in the array pass a condition. The return value is a boolean."}
               btnText={'some'}
+              onClick={() => this.setState({ clicked: true })}
+            />
+          ) : null}
+
+          {this.state.mtd === 'findIndex' ? (
+            <UnderShip
+              text={"This method returns the index of the first occurrence of the element, -1 if the element doesn't exist."}
+              btnText={'findIndex()'}
               onClick={() => this.setState({ clicked: true })}
             />
           ) : null}
