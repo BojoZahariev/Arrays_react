@@ -6,11 +6,10 @@
 
 .main {
   display: flex;
-  padding-top: 100px;
 }
 
 .header {
-  position: absolute;
+  position: relative;
   top: 0;
   background-color: #f2c078;
   height: 100px;
@@ -140,13 +139,6 @@ img {
   z-index: 1;
 }
 
-.pirate1reduced {
-  position: absolute;
-  bottom: 20%;
-  right: 36%;
-  width: 20%;
-}
-
 .pirate2 {
   position: absolute;
   bottom: 36%;
@@ -163,14 +155,7 @@ img {
   z-index: 1;
 }
 
-.pirate2 {
-  position: absolute;
-  bottom: 36%;
-  left: 45%;
-  width: 22%;
-  z-index: 1;
-}
-
+/*REDUCED */
 .pirate1reduced {
   position: absolute;
   bottom: 30%;
@@ -198,6 +183,10 @@ img {
   left: 56%;
   width: 20%;
 
+  -webkit-animation-name: reduce;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
   animation-name: reduce;
   animation-duration: 3s;
   animation-fill-mode: forwards;
@@ -212,6 +201,125 @@ img {
 @keyframes reduce {
   100% {
     left: 36%;
+  }
+}
+
+/*PUSHED*/
+.pirate3pushed {
+  position: absolute;
+  bottom: 44%;
+  left: 65%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: pushed;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: pushed;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pushed {
+  100% {
+    left: 55%;
+  }
+}
+
+@-webkit-keyframes pushed {
+  100% {
+    left: 55%;
+  }
+}
+
+.pirate4pushed {
+  position: absolute;
+  bottom: 44%;
+  left: 85%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: pushedIn;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: pushedIn;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pushedIn {
+  100% {
+    left: 71%;
+  }
+}
+
+@-webkit-keyframes pushedIn {
+  100% {
+    left: 71%;
+  }
+}
+
+/*SHIFTED*/
+
+.pirate2shifted {
+  position: absolute;
+  bottom: 36%;
+  left: 45%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: shifted;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: shifted;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes shifted {
+  100% {
+    left: 26%;
+  }
+}
+
+@keyframes shifted {
+  100% {
+    left: 26%;
+  }
+}
+
+.pirate3shifted {
+  position: absolute;
+  bottom: 44%;
+  left: 65%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: shifted2;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: shifted2;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes shifted2 {
+  100% {
+    bottom: 36%;
+    left: 45%;
+  }
+}
+
+@keyframes shifted2 {
+  100% {
+    bottom: 36%;
+    left: 45%;
   }
 }
 
@@ -316,7 +424,6 @@ img {
 .mtdTitle {
   text-align: center;
   font-size: 20px;
-  text-transform: uppercase;
 }
 
 .btn {
@@ -394,6 +501,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   font-size: 1px;
+  font-family: 'Pirata One', cursive;
   z-index: 999;
   color: #5fad56;
   text-shadow: -1px -1px 0 #222, 2px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
