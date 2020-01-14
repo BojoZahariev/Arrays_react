@@ -4,13 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #faedca;
+}
+
 .main {
   display: flex;
 }
 
 .header {
   position: relative;
-  top: 0;
   background-color: #f2c078;
   height: 100px;
   width: 100%;
@@ -40,10 +43,6 @@
   font-weight: 300;
   transform: rotate(2deg);
   letter-spacing: 3px;
-
-  /*
-  text-shadow: -1px -1px 0 #222, 2px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
-  */
 }
 
 .skull1 {
@@ -71,7 +70,7 @@
 .right {
   flex-basis: 90%;
   background-color: #faedca;
-  height: 100vh;
+
   padding: 20px;
 }
 
@@ -320,6 +319,87 @@ img {
   100% {
     bottom: 36%;
     left: 45%;
+  }
+}
+
+/*UNSHIFT*/
+
+.pirate3unshifted {
+  position: absolute;
+  bottom: 36%;
+  left: 10%;
+  width: 20%;
+  z-index: 1;
+
+  animation-name: unshifted;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes unshifted {
+  100% {
+    left: 18%;
+  }
+}
+
+.pirate1unshift {
+  position: absolute;
+  bottom: 36%;
+  left: 26%;
+  width: 20%;
+  z-index: 1;
+
+  -webkit-animation-name: unshift;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: unshift;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.pirate2unshift {
+  position: absolute;
+  bottom: 36%;
+  left: 45%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: unshift;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: unshift;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.pirate3unshift {
+  position: absolute;
+  bottom: 44%;
+  left: 65%;
+  width: 22%;
+  z-index: 1;
+
+  -webkit-animation-name: unshift;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: unshift;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes unshift {
+  100% {
+    transform: translateX(15%);
+  }
+}
+
+@keyframes unshift {
+  100% {
+    transform: translateX(15%);
   }
 }
 

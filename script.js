@@ -20,33 +20,6 @@ const Pirate = props => {
   );
 };
 
-const Ship2 = props => {
-  return (
-    <div className={props.className}>
-      <div className={props.tilt ? 'tilt' : 'test'}>
-        {!props.reduce ? <img className='shipImg' src='images/ship.png' /> : null}
-        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate1.png'} className={props.reduce ? 'pirate1reduced' : 'pirate1'} />
-        <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate2.png'} className={props.reduce ? 'pirate2reduced' : 'pirate2'} />
-        {!props.filter ? (
-          <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={props.reduce ? 'pirate3reduced' : 'pirate3'} />
-        ) : null}
-      </div>
-
-      {props.find ? <Pirate treasure={props.treasure} parrot={props.parrot} src={'images/pirate3.png'} className={'find'} /> : null}
-
-      <img className='waves' src='images/waves.png' />
-
-      {props.every ? (
-        <svg className='checkIcon'>
-          <path id='check' d='M10,50 l25,40 l95,-70' />
-        </svg>
-      ) : null}
-
-      {props.findIndex ? <div className='findIndex'>1</div> : null}
-    </div>
-  );
-};
-
 const Ship = props => {
   if (props.filter) {
     return (
@@ -145,6 +118,20 @@ const Ship = props => {
         <img className='waves' src='images/waves.png' />
       </div>
     );
+  } else if (props.unshifted) {
+    return (
+      <div className={props.className}>
+        <div className={props.tilt ? 'tilt' : 'test'}>
+          <img className='shipImg' src='images/ship.png' />
+          <Pirate src={'images/pirate3.png'} className={'pirate3unshifted'} />
+          <Pirate src={'images/pirate1.png'} className={'pirate1unshift'} />
+          <Pirate src={'images/pirate2.png'} className={'pirate2unshift'} />
+          <Pirate src={'images/pirate3.png'} className={'pirate3unshift'} />
+        </div>
+
+        <img className='waves' src='images/waves.png' />
+      </div>
+    );
   } else {
     return (
       <div className={props.className}>
@@ -194,7 +181,7 @@ class Container extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <Header />
         <div className='main'>
           <div className='left'>
@@ -213,6 +200,7 @@ class Container extends React.Component {
             <Btn text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
             <Btn text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
             <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
+            <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
           </div>
 
           {/*SHIP STATE */}
@@ -285,6 +273,13 @@ class Container extends React.Component {
             {this.state.mtd === 'shift' && this.state.clicked ? (
               <div>
                 <Ship className={'init'} shifted={true} tilt={true} />
+              </div>
+            ) : null}
+
+            {/* unshift */}
+            {this.state.mtd === 'unshift' && this.state.clicked ? (
+              <div>
+                <Ship className={'init'} unshifted={true} tilt={true} />
               </div>
             ) : null}
 
@@ -372,6 +367,14 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method removes the first array element and "shifts" all other elements to a lower index.'}
                 btnText={'shift()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : null}
+
+            {this.state.mtd === 'unshift' ? (
+              <UnderShip
+                text={'This method adds a new element at the beginning of the array.'}
+                btnText={'unshift()'}
                 onClick={() => this.setState({ clicked: true })}
               />
             ) : null}
