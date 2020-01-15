@@ -218,6 +218,7 @@ class Container extends React.Component {
             <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
             <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
             <Btn text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
+            <Btn text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
           </div>
 
           {/*SHIP STATE */}
@@ -272,8 +273,8 @@ class Container extends React.Component {
               </div>
             ) : null}
 
-            {/* pop */}
-            {this.state.mtd === 'pop' && this.state.clicked ? (
+            {/* pop / splice2 */}
+            {(this.state.mtd === 'pop' || this.state.mtd === 'splice2') && this.state.clicked ? (
               <div>
                 <Ship className={'init'} filter={true} tilt={true} />
               </div>
@@ -406,6 +407,14 @@ class Container extends React.Component {
             {this.state.mtd === 'splice' ? (
               <UnderShip
                 text={'This method can be used to add new items to an array. pirates.splice(position: 1, remove:0, add:"pirate3") '}
+                btnText={'splice()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : null}
+
+            {this.state.mtd === 'splice2' ? (
+              <UnderShip
+                text={'You can use splice() to remove elements without leaving "holes" in the array. pirates.splice(remove:pirate index2, remove:1) '}
                 btnText={'splice()'}
                 onClick={() => this.setState({ clicked: true })}
               />

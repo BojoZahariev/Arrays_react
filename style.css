@@ -576,6 +576,15 @@ img {
   background-color: #f2c078;
   border: 1px solid #222;
   width: 200px;
+  margin: 2px 0px;
+}
+
+.btn:hover {
+  transform: translateX(5%);
+}
+
+.btn:active {
+  background-color: #a77126;
 }
 
 .btnText {
