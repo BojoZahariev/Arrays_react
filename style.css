@@ -331,10 +331,21 @@ img {
   width: 20%;
   z-index: 1;
 
+  -webkit-animation-name: unshifted;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
   animation-name: unshifted;
   animation-delay: 2s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes unshifted {
+  100% {
+    left: 18%;
+  }
 }
 
 @keyframes unshifted {
@@ -393,13 +404,67 @@ img {
 
 @-webkit-keyframes unshift {
   100% {
-    transform: translateX(15%);
+    transform: translateX(18%);
   }
 }
 
 @keyframes unshift {
   100% {
-    transform: translateX(15%);
+    transform: translateX(18%);
+  }
+}
+
+/*Splice*/
+
+.pirate1spliced {
+  -webkit-animation-name: splicedPirate1;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: splicedPirate1;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes splicedPirate1 {
+  100% {
+    transform: translateX(-45%);
+  }
+}
+
+@keyframes splicedPirate1 {
+  100% {
+    transform: translateX(-45%);
+  }
+}
+
+.pirate3spliced {
+  position: absolute;
+  bottom: 36%;
+  left: 10%;
+  width: 20%;
+  z-index: 1;
+
+  -webkit-animation-name: spliced;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+
+  animation-name: spliced;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes spliced {
+  100% {
+    left: 30%;
+  }
+}
+
+@keyframes spliced {
+  100% {
+    left: 30%;
   }
 }
 

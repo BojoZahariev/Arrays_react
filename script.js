@@ -132,6 +132,21 @@ const Ship = props => {
         <img className='waves' src='images/waves.png' />
       </div>
     );
+  } else if (props.spliced) {
+    return (
+      <div className={props.className}>
+        <div className={props.tilt ? 'tilt' : 'test'}>
+          <img className='shipImg' src='images/ship.png' />
+
+          <Pirate src={'images/pirate1.png'} className={'pirate1 pirate1spliced'} />
+          <Pirate src={'images/pirate3.png'} className={'pirate3spliced'} />
+          <Pirate src={'images/pirate2.png'} className={'pirate2unshift'} />
+          <Pirate src={'images/pirate3.png'} className={'pirate3unshift'} />
+        </div>
+
+        <img className='waves' src='images/waves.png' />
+      </div>
+    );
   } else {
     return (
       <div className={props.className}>
@@ -187,7 +202,7 @@ class Container extends React.Component {
           <div className='left'>
             {/*BUTTONS */}
             {/*Iterators */}
-            <p>Iterators</p>
+            <p>Array Iterators</p>
             <Btn text='map()' onClick={() => this.setState({ mtd: 'map', clicked: false })} />
             <Btn text='forEach()' onClick={() => this.setState({ mtd: 'forEach', clicked: false })} />
             <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter', clicked: false })} />
@@ -196,11 +211,13 @@ class Container extends React.Component {
             <Btn text='every()' onClick={() => this.setState({ mtd: 'every', clicked: false })} />
             <Btn text='some()' onClick={() => this.setState({ mtd: 'some', clicked: false })} />
             <Btn text='findIndex()' onClick={() => this.setState({ mtd: 'findIndex', clicked: false })} />
+
             <p>Array methods</p>
             <Btn text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
             <Btn text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
             <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
             <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
+            <Btn text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
           </div>
 
           {/*SHIP STATE */}
@@ -280,6 +297,13 @@ class Container extends React.Component {
             {this.state.mtd === 'unshift' && this.state.clicked ? (
               <div>
                 <Ship className={'init'} unshifted={true} tilt={true} />
+              </div>
+            ) : null}
+
+            {/* splice */}
+            {this.state.mtd === 'splice' && this.state.clicked ? (
+              <div>
+                <Ship className={'init'} spliced={true} tilt={true} />
               </div>
             ) : null}
 
@@ -375,6 +399,14 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method adds a new element at the beginning of the array.'}
                 btnText={'unshift()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : null}
+
+            {this.state.mtd === 'splice' ? (
+              <UnderShip
+                text={'This method can be used to add new items to an array. pirates.splice(position: 1, remove:0, add:"pirate3") '}
+                btnText={'splice()'}
                 onClick={() => this.setState({ clicked: true })}
               />
             ) : null}
