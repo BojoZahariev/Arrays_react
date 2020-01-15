@@ -63,14 +63,12 @@ body {
   flex-basis: 10%;
   display: flex;
   flex-direction: column;
-
   background-color: #faedca;
 }
 
 .right {
-  flex-basis: 90%;
+  flex-basis: 80%;
   background-color: #faedca;
-
   padding: 20px;
 }
 
@@ -78,7 +76,7 @@ body {
   margin: 20px auto;
   position: relative;
   width: 40%;
-  min-width: 380px;
+  min-width: 280px;
   max-width: 500px;
   transition: all 1s;
 }
@@ -572,6 +570,7 @@ img {
 }
 
 .btn {
+  position: relative;
   cursor: pointer;
   background-color: #f2c078;
   border: 1px solid #222;
@@ -588,8 +587,23 @@ img {
 }
 
 .btnText {
-  font-size: 25px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.btn:hover .wheel {
+  transition: 3s;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate (360deg);
+}
+
+.wheel {
+  position: absolute;
+  width: 30px;
+  right: 0;
+  bottom: 0;
 }
 
 .mappedDiv {

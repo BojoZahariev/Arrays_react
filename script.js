@@ -147,6 +147,31 @@ const Ship = props => {
         <img className='waves' src='images/waves.png' />
       </div>
     );
+  } else if (props.concated1) {
+    return (
+      <div className={props.className}>
+        <div className={props.tilt ? 'tilt' : 'test'}>
+          <img className='shipImg' src='images/ship.png' />
+
+          <Pirate src={'images/pirate1.png'} className={'pirate1'} />
+        </div>
+
+        <img className='waves' src='images/waves.png' />
+      </div>
+    );
+  } else if (props.concated2) {
+    return (
+      <div className={props.className}>
+        <div className={props.tilt ? 'tilt' : 'test'}>
+          <img className='shipImg' src='images/ship.png' />
+
+          <Pirate src={'images/pirate2.png'} className={'pirate2'} />
+          <Pirate src={'images/pirate3.png'} className={'pirate3'} />
+        </div>
+
+        <img className='waves' src='images/waves.png' />
+      </div>
+    );
   } else {
     return (
       <div className={props.className}>
@@ -167,6 +192,7 @@ const Btn = props => {
   return (
     <div className='btn' onClick={props.onClick}>
       <p className='btnText'>{props.text}</p>
+      <img className='wheel' src='images/wheel2.png' />
     </div>
   );
 };
@@ -211,14 +237,6 @@ class Container extends React.Component {
             <Btn text='every()' onClick={() => this.setState({ mtd: 'every', clicked: false })} />
             <Btn text='some()' onClick={() => this.setState({ mtd: 'some', clicked: false })} />
             <Btn text='findIndex()' onClick={() => this.setState({ mtd: 'findIndex', clicked: false })} />
-
-            <p>Array methods</p>
-            <Btn text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
-            <Btn text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
-            <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
-            <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
-            <Btn text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
-            <Btn text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
           </div>
 
           {/*SHIP STATE */}
@@ -305,6 +323,15 @@ class Container extends React.Component {
             {this.state.mtd === 'splice' && this.state.clicked ? (
               <div>
                 <Ship className={'init'} spliced={true} tilt={true} />
+              </div>
+            ) : null}
+
+            {/* concat */}
+            {this.state.mtd === 'concat' && this.state.clicked ? (
+              <div className='mappedDiv'>
+                <Ship className={'init mapped'} concated1={true} tilt={true} />
+                <Ship className={'init mapped'} concated2={true} tilt={true} />
+                <Ship className={'init mapped'} tilt={true} />
               </div>
             ) : null}
 
@@ -420,7 +447,29 @@ class Container extends React.Component {
               />
             ) : null}
 
+            {this.state.mtd === 'concat' ? (
+              <UnderShip
+                text={'This method creates a new array by merging  existing arrays.'}
+                btnText={'concat()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : null}
+
             <BtnBck onClick={() => this.setState({ mtd: '', clicked: false })} />
+          </div>
+
+          <div className='left'>
+            {/*BUTTONS */}
+            {/*Iterators */}
+
+            <p>Array methods</p>
+            <Btn text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
+            <Btn text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
+            <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
+            <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
+            <Btn text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
+            <Btn text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
+            <Btn text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
           </div>
         </div>
       </div>
