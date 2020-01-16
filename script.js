@@ -335,6 +335,14 @@ class Container extends React.Component {
               </div>
             ) : null}
 
+            {/* slice */}
+            {this.state.mtd === 'slice' && this.state.clicked ? (
+              <div className='mappedDiv'>
+                <Ship className={'init mapped'} tilt={true} />
+                <Ship className={'init mapped'} shifted={true} tilt={true} />
+              </div>
+            ) : null}
+
             {/* RIGHT SIDE TEXT */}
 
             <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
@@ -455,6 +463,14 @@ class Container extends React.Component {
               />
             ) : null}
 
+            {this.state.mtd === 'slice' ? (
+              <UnderShip
+                text={'This method slices out a piece of an array into a new array.'}
+                btnText={'slice()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : null}
+
             <BtnBck onClick={() => this.setState({ mtd: '', clicked: false })} />
           </div>
 
@@ -470,6 +486,7 @@ class Container extends React.Component {
             <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
             <Btn side={'Right'} text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
             <Btn side={'Right'} text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
+            <Btn side={'Right'} text='slice()' onClick={() => this.setState({ mtd: 'slice', clicked: false })} />
           </div>
         </div>
       </div>
