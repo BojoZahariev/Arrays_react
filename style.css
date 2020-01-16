@@ -59,6 +59,7 @@ body {
   width: 100px;
 }
 
+/*Sides*/
 .left {
   flex-basis: 10%;
   display: flex;
@@ -66,16 +67,27 @@ body {
   background-color: #faedca;
 }
 
+/*Middle*/
 .right {
   flex-basis: 80%;
   background-color: #faedca;
   padding: 20px;
 }
 
+.initialTextDiv {
+  font-family: 'Gabriela', serif;
+}
+
+.initialText {
+  font-size: 18px;
+  padding: 20px;
+}
+
+/*initial ship */
 .init {
   margin: 20px auto;
   position: relative;
-  width: 40%;
+  width: 50%;
   min-width: 280px;
   max-width: 500px;
   transition: all 1s;
@@ -570,10 +582,11 @@ img {
 }
 
 .aboveBtn {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   font-family: 'Pirata One', cursive;
   letter-spacing: 0.5px;
+  padding: 20px;
 }
 
 .btn {
@@ -581,9 +594,10 @@ img {
   cursor: pointer;
   background-color: #f2c078;
   border: 1px solid #222;
-  width: 200px;
+  width: 240px;
   margin: 2px 0px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Gabriela', serif;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
@@ -599,8 +613,8 @@ img {
 }
 
 .btnText {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 22px;
+  padding: 15px;
 }
 
 .btnTextRight {
@@ -625,9 +639,9 @@ img {
 
 .wheel {
   position: absolute;
-  width: 35px;
+  width: 18%;
   right: 5px;
-  bottom: 5px;
+  bottom: 14%;
 }
 
 .wheelRight {
@@ -638,6 +652,10 @@ img {
 
 .underShipDiv {
   padding: 20px;
+}
+
+.underShipText {
+  font-family: 'Gabriela', serif;
 }
 
 /*map*/

@@ -348,9 +348,11 @@ class Container extends React.Component {
             <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
 
             {this.state.mtd === '' ? (
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              <div className='initialTextDiv'>
+                <p className='initialText'>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
               </div>
             ) : null}
 
@@ -491,7 +493,7 @@ class Container extends React.Component {
             <Btn side={'Right'} text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
             <Btn side={'Right'} text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
             <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
-            <Btn side={'Right'} text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
+            <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
             <Btn side={'Right'} text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
             <Btn side={'Right'} text='slice()' onClick={() => this.setState({ mtd: 'slice', clicked: false })} />
           </div>
