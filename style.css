@@ -569,6 +569,13 @@ img {
   font-size: 20px;
 }
 
+.aboveBtn {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 0.5px;
+}
+
 .btn {
   position: relative;
   cursor: pointer;
@@ -576,6 +583,7 @@ img {
   border: 1px solid #222;
   width: 200px;
   margin: 2px 0px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .btn:hover {
@@ -617,14 +625,22 @@ img {
 
 .wheel {
   position: absolute;
-  width: 30px;
-  right: 0;
+  width: 35px;
+  right: 5px;
   bottom: 5px;
 }
 
 .wheelRight {
-  left: 0;
+  left: 5px;
 }
+
+/* under Ship*/
+
+.underShipDiv {
+  padding: 20px;
+}
+
+/*map*/
 
 .mappedDiv {
   display: flex;
@@ -636,6 +652,8 @@ img {
   margin-right: 0px;
   width: 40%;
 }
+
+/*check*/
 
 .checkIcon {
   width: 150px;

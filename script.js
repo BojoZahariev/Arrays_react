@@ -192,7 +192,7 @@ const Btn = props => {
   return (
     <div className={`btn btn${props.side}`} onClick={props.onClick}>
       <p className={`btnText btnText${props.side}`}>{props.text}</p>
-      <img className={`wheel wheel${props.side}`} src='images/wheel2.png' />
+      <img className={`wheel wheel${props.side}`} src='images/wheel3.png' />
     </div>
   );
 };
@@ -200,7 +200,7 @@ const Btn = props => {
 const UnderShip = props => {
   return (
     <div className='underShipDiv'>
-      <p>{props.text}</p>
+      <p className='underShipText'>{props.text}</p>
       <Btn text={props.btnText} onClick={props.onClick} />
     </div>
   );
@@ -228,7 +228,7 @@ class Container extends React.Component {
           <div className='left'>
             {/*BUTTONS */}
             {/*Iterators */}
-            <p>Array Iterators</p>
+            <p className='aboveBtn'>Arrray Iterators</p>
             <Btn text='map()' onClick={() => this.setState({ mtd: 'map', clicked: false })} />
             <Btn text='forEach()' onClick={() => this.setState({ mtd: 'forEach', clicked: false })} />
             <Btn text='filter()' onClick={() => this.setState({ mtd: 'filter', clicked: false })} />
@@ -346,6 +346,13 @@ class Container extends React.Component {
             {/* RIGHT SIDE TEXT */}
 
             <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
+
+            {this.state.mtd === '' ? (
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </div>
+            ) : null}
 
             {this.state.mtd === 'map' ? (
               <UnderShip
@@ -478,7 +485,7 @@ class Container extends React.Component {
             {/*BUTTONS */}
             {/*Iterators */}
 
-            <p>Array methods</p>
+            <p className='aboveBtn'>Arrray Methods</p>
             <Btn side={'Right'} text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
             <Btn side={'Right'} text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
             <Btn side={'Right'} text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
