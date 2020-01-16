@@ -582,13 +582,21 @@ img {
   transform: translateX(5%);
 }
 
+.btnRight:hover {
+  transform: translateX(-5%);
+}
+
 .btn:active {
   background-color: #a77126;
 }
 
 .btnText {
   font-size: 20px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.btnTextRight {
+  text-align: right;
 }
 
 .btn:hover .wheel {
@@ -599,11 +607,23 @@ img {
   -o-transform: rotate (360deg);
 }
 
+.btnRight:hover .wheelRight {
+  transition: 3s;
+  transform: rotate(-360deg);
+  -webkit-transform: rotate(-360deg);
+  -moz-transform: rotate(-360deg);
+  -o-transform: rotate (-360deg);
+}
+
 .wheel {
   position: absolute;
   width: 30px;
   right: 0;
-  bottom: 0;
+  bottom: 5px;
+}
+
+.wheelRight {
+  left: 0;
 }
 
 .mappedDiv {

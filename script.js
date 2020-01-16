@@ -190,9 +190,9 @@ const Ship = props => {
 
 const Btn = props => {
   return (
-    <div className='btn' onClick={props.onClick}>
-      <p className='btnText'>{props.text}</p>
-      <img className='wheel' src='images/wheel2.png' />
+    <div className={`btn btn${props.side}`} onClick={props.onClick}>
+      <p className={`btnText btnText${props.side}`}>{props.text}</p>
+      <img className={`wheel wheel${props.side}`} src='images/wheel2.png' />
     </div>
   );
 };
@@ -463,13 +463,13 @@ class Container extends React.Component {
             {/*Iterators */}
 
             <p>Array methods</p>
-            <Btn text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
-            <Btn text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
-            <Btn text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
-            <Btn text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
-            <Btn text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
-            <Btn text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
-            <Btn text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
+            <Btn side={'Right'} text='pop()' onClick={() => this.setState({ mtd: 'pop', clicked: false })} />
+            <Btn side={'Right'} text='push()' onClick={() => this.setState({ mtd: 'push', clicked: false })} />
+            <Btn side={'Right'} text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
+            <Btn side={'Right'} text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
+            <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
+            <Btn side={'Right'} text='More splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
+            <Btn side={'Right'} text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
           </div>
         </div>
       </div>
