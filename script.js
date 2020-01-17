@@ -2,7 +2,16 @@ const Header = props => {
   return (
     <div className='header'>
       <img className='sign' src='images/sign2.png' />
-      <p className='signText'>Arrrays!</p>
+      <p className='signText'>Arrrays</p>
+
+      <p className='leftText'>
+        Array methods and iterators
+        <br /> explained the Pirate way
+      </p>
+      <p className='rightText'>
+        What happens on the ship
+        <br /> Stays on the ship
+      </p>
 
       <img className='skull1' src='images/skull2.png' />
       <img className='skull2' src='images/skull2.png' />

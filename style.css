@@ -45,6 +45,28 @@ body {
   letter-spacing: 3px;
 }
 
+.leftText {
+  position: absolute;
+  left: 15%;
+  top: 20px;
+  width: 20%;
+  text-align: center;
+  font-size: 25px;
+  color: #222;
+  font-family: 'Pirata One', cursive;
+}
+
+.rightText {
+  position: absolute;
+  right: 15%;
+  top: 20px;
+  width: 20%;
+  text-align: center;
+  font-size: 25px;
+  color: #222;
+  font-family: 'Pirata One', cursive;
+}
+
 .skull1 {
   position: absolute;
   left: 0;
@@ -614,7 +636,7 @@ img {
 
 .btnText {
   font-size: 22px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .btnTextRight {
@@ -639,7 +661,7 @@ img {
 
 .wheel {
   position: absolute;
-  width: 18%;
+  width: 15%;
   right: 5px;
   bottom: 14%;
 }
