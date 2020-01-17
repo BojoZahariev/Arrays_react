@@ -2,7 +2,7 @@ const Header = props => {
   return (
     <div className='header'>
       <img className='sign' src='images/sign2.png' />
-      <p className='signText'>Arrrays</p>
+      <p className='signText'>ARRRays</p>
       <img className='banner' src='images/banner.png' />
       <img className='banner2' src='images/banner.png' />
 
@@ -213,7 +213,10 @@ const UnderShip = props => {
   return (
     <div className='underShipDiv'>
       <p className='underShipText'>{props.text}</p>
-      <Btn text={props.btnText} onClick={props.onClick} />
+      <p className='underShipText'>{props.text2}</p>
+      <p className='underShipText'>{props.text3}</p>
+      <p className='underShipText4'>{props.text4}</p>
+      <Btn side={'Middle'} text={'Try it out!'} onClick={props.onClick} />
     </div>
   );
 };
@@ -357,13 +360,18 @@ class Container extends React.Component {
 
             {/* RIGHT SIDE TEXT */}
 
-            <p className='mtdTitle'>{this.state.mtd ? this.state.mtd + '()' : null}</p>
+            <p className='mtdTitle'>{this.state.mtd === 'splice2' ? 'splice()' : this.state.mtd ? this.state.mtd + '()' : null}</p>
 
             {this.state.mtd === '' ? (
               <div className='initialTextDiv'>
                 <p className='initialText'>
-                  The JavaScript Array object is a global object that is used in the construction of arrays. An array is a special type of variable that allows
-                  you to store multiple values in a single variable.
+                  Ahoy Matey! <br />
+                  As you very well know, the Array object has many properties and methods. They help developers to handle arrays easily and create awesome
+                  stuff. <br />
+                  Since we are looking at the Arrays the pirate way, lets imagine that the ship is our Array and the fierce pirates are the elements. There are
+                  many Array methods, but we are going to try only some of them.
+                  <br />
+                  Click on any of the buttons to try the different methods. Happy sailing!
                 </p>
               </div>
             ) : null}
@@ -371,6 +379,9 @@ class Container extends React.Component {
             {this.state.mtd === 'map' ? (
               <UnderShip
                 text={'This method returns a new array with the updated elements after calling a callback function on every element in the array.'}
+                text2={"Let's use MAP() to give each of our pirates a parrot, because every real pirate needs a parrot."}
+                text3={'So our code will go like that:'}
+                text4={'let pirateShip2 = pirateShip.map((pirate) => {return pirate += parrot});'}
                 btnText={'map'}
                 onClick={() => this.setState({ clicked: true })}
               />
@@ -471,7 +482,7 @@ class Container extends React.Component {
             {this.state.mtd === 'splice2' ? (
               <UnderShip
                 text={'You can use splice() to remove elements without leaving "holes" in the array. pirates.splice(remove:pirate index2, remove:1) '}
-                btnText={'splice()'}
+                btnText={'more splice()'}
                 onClick={() => this.setState({ clicked: true })}
               />
             ) : null}
@@ -509,6 +520,9 @@ class Container extends React.Component {
             <Btn side={'Right'} text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
             <Btn side={'Right'} text='slice()' onClick={() => this.setState({ mtd: 'slice', clicked: false })} />
           </div>
+
+          <img className='barrelLeft' src='images/barrel.png' />
+          <img className='barrelRight' src='images/barrel.png' />
         </div>
       </div>
     );
