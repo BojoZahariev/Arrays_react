@@ -3,11 +3,14 @@ const Header = props => {
     <div className='header'>
       <img className='sign' src='images/sign2.png' />
       <p className='signText'>Arrrays</p>
+      <img className='banner' src='images/banner.png' />
+      <img className='banner2' src='images/banner.png' />
 
       <p className='leftText'>
         Array methods and iterators
         <br /> explained the Pirate way
       </p>
+
       <p className='rightText'>
         What happens on the ship
         <br /> Stays on the ship
@@ -23,7 +26,7 @@ const Pirate = props => {
   return (
     <div className={props.className}>
       {props.parrot ? <img className='parrot' src='images/parrot2.png' /> : null}
-      {props.treasure ? <img className='treasure' src='images/treasure2.png' /> : null}
+      {props.treasure ? <img className='treasure' src='images/treasure.png' /> : null}
       <img className='pirateImg' alt='pirate' src={props.src} />
     </div>
   );
@@ -359,8 +362,8 @@ class Container extends React.Component {
             {this.state.mtd === '' ? (
               <div className='initialTextDiv'>
                 <p className='initialText'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  The JavaScript Array object is a global object that is used in the construction of arrays. An array is a special type of variable that allows
+                  you to store multiple values in a single variable.
                 </p>
               </div>
             ) : null}

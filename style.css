@@ -47,24 +47,44 @@ body {
 
 .leftText {
   position: absolute;
+  top: 25%;
   left: 15%;
-  top: 20px;
   width: 20%;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   color: #222;
   font-family: 'Pirata One', cursive;
+
+  transform: rotate(-7deg);
 }
 
 .rightText {
   position: absolute;
+  top: 25%;
   right: 15%;
-  top: 20px;
   width: 20%;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   color: #222;
   font-family: 'Pirata One', cursive;
+  transform: rotate(7deg);
+}
+
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 325px;
+  z-index: 1;
+}
+
+.banner2 {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  width: 325px;
+  transform: scaleX(-1) translate(-50%, -50%);
 }
 
 .skull1 {
@@ -94,15 +114,22 @@ body {
   flex-basis: 80%;
   background-color: #faedca;
   padding: 20px;
+  /*
+  background-image: url(images/paper2.png);
+  background-size: cover;
+  background-position: center bottom;
+  */
 }
 
 .initialTextDiv {
   font-family: 'Gabriela', serif;
+  padding: 20px;
+  max-width: 950px;
+  margin: auto;
 }
 
 .initialText {
   font-size: 18px;
-  padding: 20px;
 }
 
 /*initial ship */
@@ -574,7 +601,7 @@ img {
 
 .treasure {
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 15%;
   width: 60%;
 
