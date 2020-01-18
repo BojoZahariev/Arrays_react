@@ -368,7 +368,7 @@ class Container extends React.Component {
                   'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'
                 }
                 text3={
-                  'Since we are looking at the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
+                  'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
                 }
                 text4={'Click on any of the buttons to try the different methods. Happy sailing!'}
               />
@@ -386,9 +386,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'map' ? (
               <UnderShip
-                text={'Well done, Matey! Now our pirates are ready for adventure.'}
-                text2={'If you want to learn more about map() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'Now our pirates are ready for adventure.'}
+                text3={'If you want to learn more about map() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map' target='blank'>
                     The Docs
                   </a>
@@ -410,9 +411,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'forEach' ? (
               <UnderShip
-                text={'Well done, Matey! Now our pirates can afford all the Rum they need.'}
-                text2={'If you want to learn more about forEach() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'Now our pirates can afford all the Rum they need.'}
+                text3={'If you want to learn more about forEach() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach' target='blank'>
                     The Docs
                   </a>
@@ -436,9 +438,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'filter' ? (
               <UnderShip
-                text={'Well done, Matey! Now our new healthy crew is ready to sail. It is a bit unfair but the pirate sea is a cruel place.'}
-                text2={'If you want to learn more about filter() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'Now our new healthy crew is ready to sail. It is a bit unfair but the pirate sea is a cruel place.'}
+                text3={'If you want to learn more about filter() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='blank'>
                     The Docs
                   </a>
@@ -462,9 +465,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'find' ? (
               <UnderShip
-                text={'Well done, Matey! Now we know who is the poor one eyed pirate.'}
-                text2={'If you want to learn more about find() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                tex2={'Now we know who is the poor one eyed pirate.'}
+                text3={'If you want to learn more about find() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find' target='blank'>
                     The Docs
                   </a>
@@ -488,9 +492,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'reduce' ? (
               <UnderShip
-                text={'Well done, Matey! All our pirates are now nice and cosy on top of a barrel in the middle of the sea for no particular reason.'}
-                text2={'If you want to learn more about reduce() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'All our pirates are now nice and cosy on top of a barrel in the middle of the sea for no particular reason.'}
+                text3={'If you want to learn more about reduce() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce' target='blank'>
                     The Docs
                   </a>
@@ -512,9 +517,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'every' ? (
               <UnderShip
-                text={'Well done, Matey! Seems like there all hats are there and everyone is taking their job seriously.'}
-                text2={'If you want to learn more about every() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'Seems like there all hats are there and everyone is taking their job seriously.'}
+                text3={'If you want to learn more about every() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='blank'>
                     The Docs
                   </a>
@@ -536,9 +542,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'some' ? (
               <UnderShip
-                text={'Well done, Matey! Looks like some of them actually have bandanas, much better in the sea.'}
-                text2={'If you want to learn more about some() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'Looks like some of them actually have bandanas, much better in the sea.'}
+                text3={'If you want to learn more about some() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some' target='blank'>
                     The Docs
                   </a>
@@ -560,9 +567,10 @@ class Container extends React.Component {
               />
             ) : this.state.clicked && this.state.mtd === 'findIndex' ? (
               <UnderShip
-                text={'Well done, Matey! We found who needs to be more careful with the washing and who is going to scrub the deck all day.'}
-                text2={'If you want to learn more about findIndex() visit: '}
-                text3={
+                text={'Well done, Matey!'}
+                text2={'We found who needs to be more careful with the washing and who is going to scrub the deck all day.'}
+                text3={'If you want to learn more about findIndex() visit: '}
+                text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex' target='blank'>
                     The Docs
                   </a>
@@ -572,59 +580,209 @@ class Container extends React.Component {
               />
             ) : null}
 
-            {this.state.mtd === 'pop' ? (
-              <UnderShip text={'The pop() method removes the last element from an array.'} btnText={'pop()'} onClick={() => this.setState({ clicked: true })} />
-            ) : null}
-
-            {this.state.mtd === 'push' ? (
-              <UnderShip text={'This method adds a new element to the end of the array.'} btnText={'push()'} onClick={() => this.setState({ clicked: true })} />
-            ) : null}
-
-            {this.state.mtd === 'shift' ? (
+            {/*POP*/}
+            {this.state.mtd === 'pop' && !this.state.clicked ? (
               <UnderShip
-                text={'This method removes the first array element and "shifts" all other elements to a lower index.'}
-                btnText={'shift()'}
+                text={'This method removes the last element from the array.'}
+                text2={"Let's use pop() to get rid of the last pirate, who apparently likes chicken so much that he ate his parrot."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.pop()'}
+                btnText={'Try pop()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'pop' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={'We did the necessary stuff reduction and can continue to sail.'}
+                text3={'If you want to learn more about pop() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'unshift' ? (
+            {/*PUSH*/}
+            {this.state.mtd === 'push' && !this.state.clicked ? (
+              <UnderShip
+                text={'This method adds a new element to the end of the array.'}
+                text2={"Let's use push() to add a new crew member on our ship. The more the merrier."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.push(newPirate)'}
+                btnText={'Try push()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'push' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={"Matey! We didn't know that the new hire is the twin brother of one of our pirates, but he had great recommendations."}
+                text3={'If you want to learn more about push() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
+              />
+            ) : null}
+
+            {/*SHIFT*/}
+            {this.state.mtd === 'shift' && !this.state.clicked ? (
+              <UnderShip
+                text={'This method removes the first element from the array and "shifts" all other elements to a lower index.'}
+                text2={"Let's use shift() to send the first pirate to a well deserved holiday."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.shift()'}
+                btnText={'Try shift()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'shift' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={'We have less pirates now, but that means more Rum for the rest.'}
+                text3={'If you want to learn more about shift() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
+              />
+            ) : null}
+
+            {/*UNSHIFT*/}
+            {this.state.mtd === 'unshift' && !this.state.clicked ? (
               <UnderShip
                 text={'This method adds a new element at the beginning of the array.'}
-                btnText={'unshift()'}
+                text2={"Let's use unshift() to hire the twin brother of our one eyed pirate."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.unshift()'}
+                btnText={'Try unshift()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'unshift' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={" We didn't know that the new pirate is also one eyed, but apparently it runs in the family."}
+                text3={'If you want to learn more about unshift() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'splice' ? (
+            {/*SPLICE*/}
+            {this.state.mtd === 'splice' && !this.state.clicked ? (
               <UnderShip
-                text={'This method can be used to add new items to an array. pirates.splice(position: 1, remove:0, add:"pirate3") '}
+                text={
+                  'This method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. We can specify on which position we add the element and are we removing any elements. '
+                }
+                text2={
+                  "Let's use splice() to hire the twin brother of our one eyed pirate and put him in the position of our second pirate without firing anyone."
+                }
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.splice(position1, remove0pirates, addNewPirate)'}
                 btnText={'splice()'}
                 onClick={() => this.setState({ clicked: true })}
               />
-            ) : null}
-
-            {this.state.mtd === 'splice2' ? (
+            ) : this.state.clicked && this.state.mtd === 'splice' ? (
               <UnderShip
-                text={'You can use splice() to remove elements without leaving "holes" in the array. pirates.splice(remove:pirate index2, remove:1) '}
-                btnText={'more splice()'}
-                onClick={() => this.setState({ clicked: true })}
+                text={'Well done, Matey!'}
+                text2={' All pirates set with new positions.'}
+                text3={'If you want to learn more about splice() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'concat' ? (
+            {/*SPLICE2*/}
+            {this.state.mtd === 'splice2' && !this.state.clicked ? (
               <UnderShip
-                text={'This method creates a new array by merging  existing arrays.'}
-                btnText={'concat()'}
+                text={'We can use splice() to remove elements without leaving "holes" in the array.'}
+                text2={"Let's use splice() to get rid of our one eyed pirate as he secretly drunk all the Rum on the ship last night."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.splice(pirateWithIndex2, remove1)'}
+                btnText={'Try splice()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'splice2' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={'We need only team players onboard.'}
+                text3={'If you want to learn more about splice() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'slice' ? (
+            {/*CONCAT*/}
+            {this.state.mtd === 'concat' && !this.state.clicked ? (
               <UnderShip
-                text={'This method slices out a piece of an array into a new array.'}
-                btnText={'slice()'}
+                text={
+                  'This method creates a new array by merging  existing arrays.The method does not change the existing arrays. It always returns a new array.'
+                }
+                text2={"Let's use concat() to create a new crew from two under staffed ships and put them on a new ship."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip3 = pirateShip1.concat(pirateShip2)'}
+                btnText={'Try concat()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'concat' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={'Much better like that. With three pirate ships nothing can stop us now.'}
+                text3={'If you want to learn more about concat() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
+              />
+            ) : null}
+
+            {/*SLICE*/}
+            {this.state.mtd === 'slice' && !this.state.clicked ? (
+              <UnderShip
+                text={'This method slices out a piece of the array into a new array.'}
+                text2={"Let's use slice() to copy two of the pirates and put them on a new ship."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip2 = pirateShip1.slice(startingWithPirateWithIndex1)'}
+                btnText={'Try slice()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'slice' ? (
+              <UnderShip
+                text={'Well done, Matey!'}
+                text2={'Now we have two ships and less Rum for everyone, but the Pirate sea is a cruel place.'}
+                text3={'If you want to learn more about slice() visit: '}
+                text4={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
           </div>
@@ -639,7 +797,7 @@ class Container extends React.Component {
             <Btn side={'Right'} text='shift()' onClick={() => this.setState({ mtd: 'shift', clicked: false })} />
             <Btn side={'Right'} text='unshift()' onClick={() => this.setState({ mtd: 'unshift', clicked: false })} />
             <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice', clicked: false })} />
-            <Btn side={'Right'} text='splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
+            <Btn side={'Right'} text='more splice()' onClick={() => this.setState({ mtd: 'splice2', clicked: false })} />
             <Btn side={'Right'} text='concat()' onClick={() => this.setState({ mtd: 'concat', clicked: false })} />
             <Btn side={'Right'} text='slice()' onClick={() => this.setState({ mtd: 'slice', clicked: false })} />
           </div>
