@@ -66,6 +66,7 @@ const Ship = props => {
           <Pirate src={'images/pirate1.png'} className={'pirate1reduced'} />
           <Pirate src={'images/pirate2.png'} className={'pirate2reduced'} />
           <Pirate src={'images/pirate3.png'} className={'pirate3reduced'} />
+          <img className='barrelSea' src='images/barrel2.png' />
         </div>
 
         <img className='waves' src='images/waves.png' />
@@ -216,13 +217,9 @@ const UnderShip = props => {
       <p className='underShipText'>{props.text2}</p>
       <p className='underShipText'>{props.text3}</p>
       <p className='underShipText4'>{props.text4}</p>
-      <Btn side={'Middle'} text={props.btnText} onClick={props.onClick} />
+      {props.btnText ? <Btn side={'Middle'} text={props.btnText} onClick={props.onClick} /> : null}
     </div>
   );
-};
-
-const BtnBck = props => {
-  return <button onClick={props.onClick}>back</button>;
 };
 
 class Container extends React.Component {
@@ -358,23 +355,23 @@ class Container extends React.Component {
               </div>
             ) : null}
 
-            {/* RIGHT SIDE TEXT */}
+            {/* MIDDLE TEXT */}
 
             <p className='mtdTitle'>{this.state.mtd === 'splice2' ? 'splice()' : this.state.mtd ? this.state.mtd + '()' : null}</p>
 
             {/* Initial text */}
-            {this.state.mtd === '' ? (
-              <div className='initialTextDiv'>
-                <p className='initialText'>
-                  Ahoy Matey! <br />
-                  As you very well know, the Array object has many properties and methods. They help developers to handle arrays easily and create awesome
-                  stuff. <br />
-                  Since we are looking at the Arrays the pirate way, lets imagine that the ship is our Array and the fierce pirates are the elements. There are
-                  many Array methods, but we are going to try only some of them.
-                  <br />
-                  Click on any of the buttons to try the different methods. Happy sailing!
-                </p>
-              </div>
+
+            {this.state.mtd === '' && !this.state.clicked ? (
+              <UnderShip
+                text={'Ahoy Matey!'}
+                text2={
+                  'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'
+                }
+                text3={
+                  'Since we are looking at the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
+                }
+                text4={'Click on any of the buttons to try the different methods. Happy sailing!'}
+              />
             ) : null}
 
             {/* MAP */}
@@ -454,43 +451,124 @@ class Container extends React.Component {
             {/* FIND */}
             {this.state.mtd === 'find' && !this.state.clicked ? (
               <UnderShip
-                text={'This method returns the value of the first element of an array which satisfies a condition.'}
-                btnText={'find'}
+                text={
+                  "This method returns the value of the first element of the array which satisfies a condition. The method will return 'undefined' if none of the elements satisfies this condition."
+                }
+                text2={"Let's use find() to find the pirate that didn't follow the safety procedures on the last plunder and lost his eye ."}
+                text3={'So our code can go like that:'}
+                text4={'let oneEyedPirate = pirateShip.find((pirate) => pirate.numberOfEyes < 2);'}
+                btnText={'Try find()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'find' ? (
+              <UnderShip
+                text={'Well done, Matey! Now we know who is the poor one eyed pirate.'}
+                text2={'If you want to learn more about find() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'reduce' ? (
+            {/* REDUCE*/}
+            {this.state.mtd === 'reduce' && !this.state.clicked ? (
               <UnderShip
                 text={
-                  'The reduce method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).The return value of the function is stored in an accumulator.'
+                  'This method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).'
                 }
-                btnText={'reduce'}
+                text2={"Let's use reduce() to reduce our pirates to a single pile of pirates on top of a barrel, just for fun."}
+                text3={'So our code can go like that:'}
+                text4={'let pileOfPirates = pirateShip.reduce((pile, pirate) => pile += pirate);'}
+                btnText={'Try reduce()'}
                 onClick={() => this.setState({ clicked: true })}
               />
-            ) : null}
-
-            {this.state.mtd === 'every' ? (
+            ) : this.state.clicked && this.state.mtd === 'reduce' ? (
               <UnderShip
-                text={"The 'every' tests if all elements in the array pass a condition. The return value is a boolean."}
-                btnText={'every'}
-                onClick={() => this.setState({ clicked: true })}
+                text={'Well done, Matey! All our pirates are now nice and cosy on top of a barrel in the middle of the sea for no particular reason.'}
+                text2={'If you want to learn more about reduce() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'some' ? (
+            {/*EVERY*/}
+            {this.state.mtd === 'every' && !this.state.clicked ? (
               <UnderShip
-                text={"The 'some' method tests if some of the elements in the array pass a condition. The return value is a boolean."}
-                btnText={'some'}
+                text={'This method tests if all elements in the array pass a condition. The return value is a boolean.'}
+                text2={"Let's use every() to check if all our pirates have hats or someone was using it to catch seagulls and lost it again."}
+                text3={'So our code can go like that:'}
+                text4={'let allHaveHats = pirateShip.every((pirate) => pirate.hasAHat === true);'}
+                btnText={'Try every()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'every' ? (
+              <UnderShip
+                text={'Well done, Matey! Seems like there all hats are there and everyone is taking their job seriously.'}
+                text2={'If you want to learn more about every() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'findIndex' ? (
+            {/*SOME*/}
+            {this.state.mtd === 'some' && !this.state.clicked ? (
+              <UnderShip
+                text={'This method tests if some of the elements in the array pass a condition. The return value is a boolean.'}
+                text2={"Let's use some() to check if some of our pirates have a bandana or not."}
+                text3={'So our code can go like that:'}
+                text4={'let someHaveBandanas = pirateShip.some((pirate) => pirate.hasABandana === true);'}
+                btnText={'Try some()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'some' ? (
+              <UnderShip
+                text={'Well done, Matey! Looks like some of them actually have bandanas, much better in the sea.'}
+                text2={'If you want to learn more about some() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
+              />
+            ) : null}
+
+            {/*FIND INDEX*/}
+            {this.state.mtd === 'findIndex' && !this.state.clicked ? (
               <UnderShip
                 text={"This method returns the index of the first occurrence of the element, -1 if the element doesn't exist."}
-                btnText={'findIndex()'}
+                text2={"Let's use findIndex() to find on which position is the pirate that didn't separate his washing and stained his trousers orange."}
+                text3={'So our code can go like that:'}
+                text4={'let findOrangeTrousers = pirateShip.findIndex((pirate) => pirate.numberOfOrangeTrousers > 0);'}
+                btnText={'Try findIndex()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'findIndex' ? (
+              <UnderShip
+                text={'Well done, Matey! We found who needs to be more careful with the washing and who is going to scrub the deck all day.'}
+                text2={'If you want to learn more about findIndex() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
@@ -549,8 +627,6 @@ class Container extends React.Component {
                 onClick={() => this.setState({ clicked: true })}
               />
             ) : null}
-
-            <BtnBck onClick={() => this.setState({ mtd: '', clicked: false })} />
           </div>
 
           <div className='left'>

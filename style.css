@@ -251,6 +251,13 @@ img {
   }
 }
 
+.barrelSea {
+  width: 22%;
+  position: absolute;
+  bottom: 9%;
+  left: 36%;
+}
+
 /*PUSHED*/
 .pirate3pushed {
   position: absolute;
@@ -738,6 +745,10 @@ img {
 
 .underShipText4 {
   font-size: 20px;
+  color: #a77126;
+}
+
+a {
   color: #a77126;
 }
 
