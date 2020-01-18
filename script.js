@@ -8,7 +8,7 @@ const Header = props => {
 
       <p className='leftText'>
         Array methods and iterators
-        <br /> explained the Pirate way
+        <br /> The Pirate way
       </p>
 
       <p className='rightText'>
@@ -216,7 +216,7 @@ const UnderShip = props => {
       <p className='underShipText'>{props.text2}</p>
       <p className='underShipText'>{props.text3}</p>
       <p className='underShipText4'>{props.text4}</p>
-      <Btn side={'Middle'} text={'Try it out!'} onClick={props.onClick} />
+      <Btn side={'Middle'} text={props.btnText} onClick={props.onClick} />
     </div>
   );
 };
@@ -362,6 +362,7 @@ class Container extends React.Component {
 
             <p className='mtdTitle'>{this.state.mtd === 'splice2' ? 'splice()' : this.state.mtd ? this.state.mtd + '()' : null}</p>
 
+            {/* Initial text */}
             {this.state.mtd === '' ? (
               <div className='initialTextDiv'>
                 <p className='initialText'>
@@ -376,36 +377,82 @@ class Container extends React.Component {
               </div>
             ) : null}
 
-            {this.state.mtd === 'map' ? (
+            {/* MAP */}
+            {this.state.mtd === 'map' && !this.state.clicked ? (
               <UnderShip
                 text={'This method returns a new array with the updated elements after calling a callback function on every element in the array.'}
-                text2={"Let's use MAP() to give each of our pirates a parrot, because every real pirate needs a parrot."}
-                text3={'So our code will go like that:'}
+                text2={"Let's use MAP() to equip our pirates with parrots, because every real pirate needs a parrot."}
+                text3={'So our code can go like that:'}
                 text4={'let pirateShip2 = pirateShip.map((pirate) => {return pirate += parrot});'}
-                btnText={'map'}
+                btnText={'Try map()'}
                 onClick={() => this.setState({ clicked: true })}
               />
-            ) : null}
-
-            {this.state.mtd === 'forEach' ? (
+            ) : this.state.clicked && this.state.mtd === 'map' ? (
               <UnderShip
-                text={'This method executes a snippet of code (or a function) once for every element of an array.'}
-                btnText={'forEach'}
-                onClick={() => this.setState({ clicked: true })}
+                text={'Well done, Matey! Now our pirates are ready for adventure.'}
+                text2={'If you want to learn more about map() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'filter' ? (
+            {/* FOREACH */}
+            {this.state.mtd === 'forEach' && !this.state.clicked ? (
+              <UnderShip
+                text={'This method executes a snippet of code or a function once for each element of the array.'}
+                text2={"Let's use forEach() to find a treasure for each of our pirates."}
+                text3={'So our code can go like that:'}
+                text4={'pirateShip.forEach((pirate) => {find a treasure});'}
+                btnText={'Try forEach()'}
+                onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'forEach' ? (
+              <UnderShip
+                text={'Well done, Matey! Now our pirates can afford all the Rum they need.'}
+                text2={'If you want to learn more about forEach() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
+              />
+            ) : null}
+
+            {/* FILTER */}
+            {this.state.mtd === 'filter' && !this.state.clicked ? (
               <UnderShip
                 text={
-                  'This method checks each element in an array to see if it meets a condition. It returns a new array with the elements that meet the condition.'
+                  'This method checks each element in the array to see if it meets a condition. It returns a new array with the elements that meet the condition.'
                 }
-                btnText={'filter'}
+                text2={"Let's use filter() to clone and move to a new ship only the pirates that still have both their eyes."}
+                text3={'So our code can go like that:'}
+                text4={'let pirateShip2 = pirateShip.filter((pirate) => pirate.NumberOfEyes > 1);'}
+                btnText={'Try filter()'}
                 onClick={() => this.setState({ clicked: true })}
+              />
+            ) : this.state.clicked && this.state.mtd === 'filter' ? (
+              <UnderShip
+                text={'Well done, Matey! Now our new healthy crew is ready to sail. It is a bit unfair but the pirate sea is a cruel place.'}
+                text2={'If you want to learn more about filter() visit: '}
+                text3={
+                  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='blank'>
+                    The Docs
+                  </a>
+                }
+                btnText={'Back to the port'}
+                onClick={() => this.setState({ mtd: '', clicked: false })}
               />
             ) : null}
 
-            {this.state.mtd === 'find' ? (
+            {/* FIND */}
+            {this.state.mtd === 'find' && !this.state.clicked ? (
               <UnderShip
                 text={'This method returns the value of the first element of an array which satisfies a condition.'}
                 btnText={'find'}

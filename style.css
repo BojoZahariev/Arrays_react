@@ -616,7 +616,8 @@ img {
 
 .mtdTitle {
   text-align: center;
-  font-size: 25px;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .aboveBtn {
@@ -681,16 +682,16 @@ img {
 
 .btnMiddle {
   margin: 10px auto;
-  -webkit-box-shadow: -1px 1px 5px 3px #222;
-  -moz-box-shadow: -1px 1px 5px 3px #222;
-  box-shadow: -1px 1px 5px 3px #222;
+  -webkit-box-shadow: -1px 1px 5px 0px #222;
+  -moz-box-shadow: -1px 1px 5px 0px #222;
+  box-shadow: -1px 1px 5px 0px #222;
 }
 
 .btnMiddle:active {
   background-color: #f2c078;
-  -webkit-box-shadow: -1px 1px 5px 2px #222;
-  -moz-box-shadow: -1px 1px 5px 2px #222;
-  box-shadow: -1px 1px 5px 2px #222;
+  -webkit-box-shadow: -1px 1px 3px 0px #222;
+  -moz-box-shadow: -1px 1px 3px 0px #222;
+  box-shadow: -1px 1px 3px 0px #222;
 }
 
 .wheel {
