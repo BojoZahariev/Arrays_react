@@ -364,9 +364,7 @@ class Container extends React.Component {
             {this.state.mtd === '' && !this.state.clicked ? (
               <UnderShip
                 text={'Ahoy Matey!'}
-                text2={
-                  'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'
-                }
+                text2={'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'}
                 text3={
                   'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
                 }
@@ -379,7 +377,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method returns a new array with the updated elements after calling a callback function on every element in the array.'}
                 text2={"Let's use MAP() to equip our pirates with parrots, because every real pirate needs a parrot."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let pirateShip2 = pirateShip.map((pirate) => {return pirate += parrot});'}
                 btnText={'Try map()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -404,7 +402,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method executes a snippet of code or a function once for each element of the array.'}
                 text2={"Let's use forEach() to find a treasure for each of our pirates."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.forEach((pirate) => {find a treasure});'}
                 btnText={'Try forEach()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -427,11 +425,9 @@ class Container extends React.Component {
             {/* FILTER */}
             {this.state.mtd === 'filter' && !this.state.clicked ? (
               <UnderShip
-                text={
-                  'This method checks each element in the array to see if it meets a condition. It returns a new array with the elements that meet the condition.'
-                }
+                text={'This method checks each element in the array to see if it meets a condition. It returns a new array with the elements that meet the condition.'}
                 text2={"Let's use filter() to clone and move to a new ship only the pirates that still have both their eyes."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let pirateShip2 = pirateShip.filter((pirate) => pirate.NumberOfEyes > 1);'}
                 btnText={'Try filter()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -458,7 +454,7 @@ class Container extends React.Component {
                   "This method returns the value of the first element of the array which satisfies a condition. The method will return 'undefined' if none of the elements satisfies this condition."
                 }
                 text2={"Let's use find() to find the pirate that didn't follow the safety procedures on the last plunder and lost his eye ."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let oneEyedPirate = pirateShip.find((pirate) => pirate.numberOfEyes < 2);'}
                 btnText={'Try find()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -481,11 +477,9 @@ class Container extends React.Component {
             {/* REDUCE*/}
             {this.state.mtd === 'reduce' && !this.state.clicked ? (
               <UnderShip
-                text={
-                  'This method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).'
-                }
+                text={'This method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).'}
                 text2={"Let's use reduce() to reduce our pirates to a single pile of pirates on top of a barrel, just for fun."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let pileOfPirates = pirateShip.reduce((pile, pirate) => pile += pirate);'}
                 btnText={'Try reduce()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -510,7 +504,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method tests if all elements in the array pass a condition. The return value is a boolean.'}
                 text2={"Let's use every() to check if all our pirates have hats or someone was using it to catch seagulls and lost it again."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let allHaveHats = pirateShip.every((pirate) => pirate.hasAHat === true);'}
                 btnText={'Try every()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -535,7 +529,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method tests if some of the elements in the array pass a condition. The return value is a boolean.'}
                 text2={"Let's use some() to check if some of our pirates have a bandana or not."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let someHaveBandanas = pirateShip.some((pirate) => pirate.hasABandana === true);'}
                 btnText={'Try some()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -560,7 +554,7 @@ class Container extends React.Component {
               <UnderShip
                 text={"This method returns the index of the first occurrence of the element, -1 if the element doesn't exist."}
                 text2={"Let's use findIndex() to find on which position is the pirate that didn't separate his washing and stained his trousers orange."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'let findOrangeTrousers = pirateShip.findIndex((pirate) => pirate.numberOfOrangeTrousers > 0);'}
                 btnText={'Try findIndex()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -585,7 +579,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method removes the last element from the array.'}
                 text2={"Let's use pop() to get rid of the last pirate, who apparently likes chicken so much that he ate his parrot."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.pop()'}
                 btnText={'Try pop()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -610,7 +604,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method adds a new element to the end of the array.'}
                 text2={"Let's use push() to add a new crew member on our ship. The more the merrier."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.push(newPirate)'}
                 btnText={'Try push()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -618,7 +612,7 @@ class Container extends React.Component {
             ) : this.state.clicked && this.state.mtd === 'push' ? (
               <UnderShip
                 text={'Well done, Matey!'}
-                text2={"Matey! We didn't know that the new hire is the twin brother of one of our pirates, but he had great recommendations."}
+                text2={"We didn't know that the new hire is the twin brother of one of our pirates, but he had great recommendations."}
                 text3={'If you want to learn more about push() visit: '}
                 text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push' target='blank'>
@@ -635,7 +629,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method removes the first element from the array and "shifts" all other elements to a lower index.'}
                 text2={"Let's use shift() to send the first pirate to a well deserved holiday."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.shift()'}
                 btnText={'Try shift()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -660,7 +654,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method adds a new element at the beginning of the array.'}
                 text2={"Let's use unshift() to hire the twin brother of our one eyed pirate."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.unshift()'}
                 btnText={'Try unshift()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -686,10 +680,8 @@ class Container extends React.Component {
                 text={
                   'This method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. We can specify on which position we add the element and are we removing any elements. '
                 }
-                text2={
-                  "Let's use splice() to hire the twin brother of our one eyed pirate and put him in the position of our second pirate without firing anyone."
-                }
-                text3={'So our code can go like that:'}
+                text2={"Let's use splice() to hire the twin brother of our one eyed pirate and put him in the position of our second pirate without firing anyone."}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.splice(position1, remove0pirates, addNewPirate)'}
                 btnText={'splice()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -714,7 +706,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'We can use splice() to remove elements without leaving "holes" in the array.'}
                 text2={"Let's use splice() to get rid of our one eyed pirate as he secretly drunk all the Rum on the ship last night."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.splice(pirateWithIndex2, remove1)'}
                 btnText={'Try splice()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -737,11 +729,9 @@ class Container extends React.Component {
             {/*CONCAT*/}
             {this.state.mtd === 'concat' && !this.state.clicked ? (
               <UnderShip
-                text={
-                  'This method creates a new array by merging  existing arrays.The method does not change the existing arrays. It always returns a new array.'
-                }
+                text={'This method creates a new array by merging  existing arrays.The method does not change the existing arrays. It always returns a new array.'}
                 text2={"Let's use concat() to create a new crew from two under staffed ships and put them on a new ship."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip3 = pirateShip1.concat(pirateShip2)'}
                 btnText={'Try concat()'}
                 onClick={() => this.setState({ clicked: true })}
@@ -766,7 +756,7 @@ class Container extends React.Component {
               <UnderShip
                 text={'This method slices out a piece of the array into a new array.'}
                 text2={"Let's use slice() to copy two of the pirates and put them on a new ship."}
-                text3={'So our code can go like that:'}
+                text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip2 = pirateShip1.slice(startingWithPirateWithIndex1)'}
                 btnText={'Try slice()'}
                 onClick={() => this.setState({ clicked: true })}
