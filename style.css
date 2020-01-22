@@ -861,3 +861,26 @@ a {
   width: 10%;
   opacity: 0.5;
 }
+
+/*MEDIA*/
+
+@media only screen and (max-width: 1200px) {
+  .leftText {
+    display: none;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .rightText {
+    display: none;
+  }
+
+  .banner2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
