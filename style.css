@@ -883,4 +883,26 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  .header {
+    height: 50px;
+  }
+
+  .sign {
+    top: -20px;
+    width: 120px;
+  }
+
+  .signText {
+    top: 25px;
+    width: 120px;
+    font-size: 22px;
+  }
+
+  .skull1 {
+    width: 50px;
+  }
+
+  .skull2 {
+    width: 50px;
+  }
 }
