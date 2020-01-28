@@ -215,6 +215,7 @@ class UnderShip extends React.Component {
     super(props);
   }
 
+  //scroll to the top on mobile when updated
   componentDidMount() {
     window.scrollTo(0, 0);
   }

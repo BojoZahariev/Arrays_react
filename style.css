@@ -948,9 +948,6 @@ a {
   .btnMiddle {
     text-align: center;
     margin: 10px auto;
-    -webkit-box-shadow: -1px 1px 5px 0px #222;
-    -moz-box-shadow: -1px 1px 5px 0px #222;
-    box-shadow: -1px 1px 5px 0px #222;
   }
 
   .btnMiddle > .wheel {
