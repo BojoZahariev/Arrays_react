@@ -114,11 +114,6 @@ body {
   flex-basis: 80%;
   background-color: #faedca;
   padding: 20px;
-  /*
-  background-image: url(images/paper2.png);
-  background-size: cover;
-  background-position: center bottom;
-  */
 }
 
 /*initial ship */
@@ -904,5 +899,61 @@ a {
 
   .skull2 {
     width: 50px;
+  }
+
+  .main {
+    flex-wrap: wrap;
+  }
+
+  .left {
+    order: 2;
+    flex-basis: 50%;
+  }
+
+  /*Middle*/
+  .right {
+    padding: 10px;
+    flex-basis: 100%;
+  }
+
+  /*initial ship */
+  .init {
+    width: 80%;
+    min-width: 80px;
+    max-width: 500px;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 2px 0px;
+  }
+
+  .btnText {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .btnRight:hover {
+    transform: none;
+  }
+
+  .underShipDiv {
+    padding: 0px;
+  }
+
+  .btnMiddle {
+    text-align: center;
+    margin: 10px auto;
+    -webkit-box-shadow: -1px 1px 5px 0px #222;
+    -moz-box-shadow: -1px 1px 5px 0px #222;
+    box-shadow: -1px 1px 5px 0px #222;
+  }
+
+  .btnMiddle > .wheel {
+    display: none;
   }
 }

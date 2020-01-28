@@ -210,17 +210,27 @@ const Btn = props => {
   );
 };
 
-const UnderShip = props => {
-  return (
-    <div className='underShipDiv'>
-      <p className='underShipText'>{props.text}</p>
-      <p className='underShipText'>{props.text2}</p>
-      <p className='underShipText'>{props.text3}</p>
-      <p className='underShipText4'>{props.text4}</p>
-      {props.btnText ? <Btn side={'Middle'} text={props.btnText} onClick={props.onClick} /> : null}
-    </div>
-  );
-};
+class UnderShip extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  render() {
+    return (
+      <div className='underShipDiv'>
+        <p className='underShipText'>{this.props.text}</p>
+        <p className='underShipText'>{this.props.text2}</p>
+        <p className='underShipText'>{this.props.text3}</p>
+        <p className='underShipText4'>{this.props.text4}</p>
+        {this.props.btnText ? <Btn side={'Middle'} text={this.props.btnText} onClick={this.props.onClick} /> : null}
+      </div>
+    );
+  }
+}
 
 class Container extends React.Component {
   constructor(props) {
@@ -364,7 +374,9 @@ class Container extends React.Component {
             {this.state.mtd === '' && !this.state.clicked ? (
               <UnderShip
                 text={'Ahoy Matey!'}
-                text2={'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'}
+                text2={
+                  'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'
+                }
                 text3={
                   'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
                 }
@@ -425,7 +437,9 @@ class Container extends React.Component {
             {/* FILTER */}
             {this.state.mtd === 'filter' && !this.state.clicked ? (
               <UnderShip
-                text={'This method checks each element in the array to see if it meets a condition. It returns a new array with the elements that meet the condition.'}
+                text={
+                  'This method checks each element in the array to see if it meets a condition. It returns a new array with the elements that meet the condition.'
+                }
                 text2={"Let's use filter() to clone and move to a new ship only the pirates that still have both their eyes."}
                 text3={'So our pseudo code can go like that:'}
                 text4={'let pirateShip2 = pirateShip.filter((pirate) => pirate.NumberOfEyes > 1);'}
@@ -477,7 +491,9 @@ class Container extends React.Component {
             {/* REDUCE*/}
             {this.state.mtd === 'reduce' && !this.state.clicked ? (
               <UnderShip
-                text={'This method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).'}
+                text={
+                  'This method is used to reduce the array to a single value. It executes a provided function for each value of the array (from left-to-right).'
+                }
                 text2={"Let's use reduce() to reduce our pirates to a single pile of pirates on top of a barrel, just for fun."}
                 text3={'So our pseudo code can go like that:'}
                 text4={'let pileOfPirates = pirateShip.reduce((pile, pirate) => pile += pirate);'}
@@ -680,7 +696,9 @@ class Container extends React.Component {
                 text={
                   'This method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. We can specify on which position we add the element and are we removing any elements. '
                 }
-                text2={"Let's use splice() to hire the twin brother of our one eyed pirate and put him in the position of our second pirate without firing anyone."}
+                text2={
+                  "Let's use splice() to hire the twin brother of our one eyed pirate and put him in the position of our second pirate without firing anyone."
+                }
                 text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip.splice(position1, remove0pirates, addNewPirate)'}
                 btnText={'splice()'}
@@ -729,7 +747,9 @@ class Container extends React.Component {
             {/*CONCAT*/}
             {this.state.mtd === 'concat' && !this.state.clicked ? (
               <UnderShip
-                text={'This method creates a new array by merging  existing arrays.The method does not change the existing arrays. It always returns a new array.'}
+                text={
+                  'This method creates a new array by merging  existing arrays.The method does not change the existing arrays. It always returns a new array.'
+                }
                 text2={"Let's use concat() to create a new crew from two under staffed ships and put them on a new ship."}
                 text3={'So our pseudo code can go like that:'}
                 text4={'pirateShip3 = pirateShip1.concat(pirateShip2)'}
