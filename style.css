@@ -864,16 +864,35 @@ a {
     display: none;
   }
 
-  .banner {
-    display: none;
-  }
-
   .rightText {
     display: none;
   }
 
+  .banner {
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    z-index: 1;
+  }
+
   .banner2 {
-    display: none;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    width: 20%;
+    transform: scaleX(-1) translate(-50%, -50%);
+  }
+
+  .sign {
+    top: -40px;
+    width: 250px;
+  }
+
+  .signText {
+    top: 50px;
+    width: 250px;
+    font-size: 45px;
   }
 }
 
@@ -943,6 +962,11 @@ a {
 
   .underShipDiv {
     padding: 0px;
+    font-size: 16px;
+  }
+
+  .underShipText4 {
+    font-size: 18px;
   }
 
   .btnMiddle {

@@ -376,10 +376,10 @@ class Container extends React.Component {
               <UnderShip
                 text={'Ahoy Matey!'}
                 text2={
-                  'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff'
+                  'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff.'
                 }
                 text3={
-                  'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
+                  'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them today.'
                 }
                 text4={'Click on any of the buttons to try the different methods. Happy sailing!'}
               />
@@ -450,7 +450,7 @@ class Container extends React.Component {
             ) : this.state.clicked && this.state.mtd === 'filter' ? (
               <UnderShip
                 text={'Well done, Matey!'}
-                text2={'Now our new healthy crew is ready to sail. It is a bit unfair but the pirate sea is a cruel place.'}
+                text2={'Now our new healthy crew is ready to sail. It is a bit unfair but the Pirate sea is a cruel place.'}
                 text3={'If you want to learn more about filter() visit: '}
                 text4={
                   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='blank'>
@@ -572,7 +572,7 @@ class Container extends React.Component {
                 text={"This method returns the index of the first occurrence of the element, -1 if the element doesn't exist."}
                 text2={"Let's use findIndex() to find on which position is the pirate that didn't separate his washing and stained his trousers orange."}
                 text3={'So our pseudo code can go like that:'}
-                text4={'let findOrangeTrousers = pirateShip.findIndex((pirate) => pirate.numberOfOrangeTrousers > 0);'}
+                text4={'let findOrangeTrousers = pirateShip.findIndex((pirate) => pirate.hasOrangeTrousers === true);'}
                 btnText={'Try findIndex()'}
                 onClick={() => this.setState({ clicked: true })}
               />
@@ -672,7 +672,7 @@ class Container extends React.Component {
                 text={'This method adds a new element at the beginning of the array.'}
                 text2={"Let's use unshift() to hire the twin brother of our one eyed pirate."}
                 text3={'So our pseudo code can go like that:'}
-                text4={'pirateShip.unshift()'}
+                text4={'pirateShip.unshift(newPirate)'}
                 btnText={'Try unshift()'}
                 onClick={() => this.setState({ clicked: true })}
               />
