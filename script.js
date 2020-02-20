@@ -379,7 +379,7 @@ class Container extends React.Component {
                   'As you very well know, the Array method has many properties and methods. They help the developers to handle their code easily and create awesome stuff.'
                 }
                 text3={
-                  'Since we are exploring the Array the pirate way today, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them today.'
+                  'Today we are exploring the Array the pirate way, the scary ship will be our array and the fierce pirates will be the elements. There are many array methods but we will try only some of them.'
                 }
                 text4={'Click on any of the buttons to try the different methods. Happy sailing!'}
               />
